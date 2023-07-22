@@ -1,7 +1,16 @@
-import express from 'express'
+import express from 'express';
+// import connection from './database/db.js'
+import Connection from './database/db.js';
+import dotenv from 'dotenv'
 
-const app = express():
+
+dotenv.config();
+const app = express();
 
 const PORT = 8000;
 
-app.listen()
+app.listen(PORT, ()=> console.log(`server is running on port ${PORT}`))
+
+const USERNAME = process.env.DB_USERNAME;
+const PASSWORD = process.env.DB_PASSWORD
+Connection(USERNAME,PASSWORD)
